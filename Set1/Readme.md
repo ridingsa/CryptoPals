@@ -12,3 +12,6 @@ def str2array(st):
       arr.append(int(st[index:index+2],16))
    return arr
 ```
+
+The function basically steps through the string two characters at a time, converts each set of characters into a hex byte, and then stores the byte into the array.
+
