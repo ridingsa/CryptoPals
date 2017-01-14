@@ -13,5 +13,10 @@ def str2array(st):
    return arr
 ```
 
-The function basically steps through the string two characters at a time, converts each set of characters into a hex byte, and then stores the byte into the array.
+The function basically steps through the string two characters at a time, converts each set of characters into a hex byte, and then stores the byte into the array. There's also a function called fromhex that work with python 3:
 
+```python
+bytes.fromhex(hexvar)
+```
+
+However, I used python 2 for the first couple of challenges. 
