@@ -19,4 +19,12 @@ The function basically steps through the string two characters at a time, conver
 bytes.fromhex(hexvar)
 ```
 
-However, I used python 2 for the first couple of challenges. 
+However, I used python 2 for the first couple of challenges. Next, I think they really just wanted us to use something like
+
+```python
+import base64
+
+base64.b64encode(hexval)
+```
+
+but I decided to try and implement a basic base64 encoder. I used the wikipedia page (https://en.wikipedia.org/wiki/Base64) to figure out how to start encoding. According to Wikipedia you take three bytes and split those three bytes into four 6-bit segments, then the values of the 6-bit segments and lookup the corresponding value in a table.
