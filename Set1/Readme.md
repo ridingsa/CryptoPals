@@ -27,7 +27,23 @@ import base64
 base64.b64encode(hexval)
 ```
 
-but I decided to try and implement a basic base64 encoder. I used the wikipedia page (https://en.wikipedia.org/wiki/Base64) to figure out how to start encoding. According to Wikipedia you take three bytes and split those three bytes into four 6-bit segments, then the values of the 6-bit segments and lookup the corresponding value in a table.
+but I decided to try and implement a basic base64 encoder. I used the wikipedia page (https://en.wikipedia.org/wiki/Base64) to figure out how to start encoding. According to Wikipedia you take three bytes and split those three bytes into four 6-bit segments, then the values of the 6-bit segments and lookup the corresponding value in a table. To implement this, I basically created a loop that reads in 3 bytes at a time, then I use logical shifts to get the append them all together. After appending the values together, I use bit-masks and a logical and to seperate the four 6-bit segments and look up their values. Then I use a dictionary to see which character to print.
+
+```python
+index = 0
+while index < len(hexval):
+   temp1 = hexval[index] << 16
+   index += 1
+   temp2 = hexval[index] << 8
+   index += 1
+   temp3 = hexval[index]
+   num = temp1 + temp2 + temp3
+   output = output + dict[(num & 0xFC0000) >> 18]
+   output = output + dict[(num & 0x3F000) >> 12]
+   output = output + dict[(num & 0xFC0) >> 6]
+   output = output + dict[(num & 0x3f)]
+   index  += 1
+```
 
 
 ## Fixed XOR
