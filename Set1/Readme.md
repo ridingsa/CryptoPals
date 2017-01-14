@@ -63,8 +63,7 @@ def str2array(st):
  key = str2array(options.key)
  hexval = str2array(options.hexval)
 ```
-Once I converted the hex strings into byte array I simply used a for loop to XOR ```^``` each byte in the array. Since both strings were the same length, I didn't have to worry about 
-
+Once I converted the hex strings into byte array I simply used a for loop to XOR ```(key[index] ^ xor[index])``` each byte in the array and then formated the output using ```output = output + "%0.2X" %  (key[index] ^ xor[index])```. The ```"%0.2X"``` just makes sure that each byte is printed two wide (i.e. 01 instead of 1).  After printing the output the problem is solved.
 
 
 ## Single-Byte XOR
