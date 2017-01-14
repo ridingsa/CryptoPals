@@ -28,3 +28,11 @@ base64.b64encode(hexval)
 ```
 
 but I decided to try and implement a basic base64 encoder. I used the wikipedia page (https://en.wikipedia.org/wiki/Base64) to figure out how to start encoding. According to Wikipedia you take three bytes and split those three bytes into four 6-bit segments, then the values of the 6-bit segments and lookup the corresponding value in a table.
+
+
+## Fixed XOR
+###https://cryptopals.com/sets/1/challenges/2
+
+
+## Single-Byte XOR
+###https://cryptopals.com/sets/1/challenges/3
