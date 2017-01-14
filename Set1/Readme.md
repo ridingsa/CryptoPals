@@ -49,6 +49,23 @@ while index < len(hexval):
 ## Fixed XOR
 ###https://cryptopals.com/sets/1/challenges/2
 
+For this challenge you are given two hex strings and asked to XOR them. I used the same str2array function as in the first problem to convert the two hex strings into byte arrays
+
+```python
+def str2array(st):
+   arr = []
+   for index in range(0,len(st),2):
+      arr.append(int(st[index:index+2],16))
+   return arr
+```
+
+```python
+ key = str2array(options.key)
+ hexval = str2array(options.hexval)
+```
+Once I converted the hex strings into byte array I simply used a for loop to XOR ```^``` each byte in the array. Since both strings were the same length, I didn't have to worry about 
+
+
 
 ## Single-Byte XOR
 ###https://cryptopals.com/sets/1/challenges/3
